@@ -69,11 +69,11 @@ class Wallet {
  **********************************************************/
 class Person {
   // implement Person!
-  constructor(name, x, y, wallet) {
+  constructor(name, x, y) {
     this.name = name;
-    this.location = new Point(x, y);
-    this.wallet = new Wallet();
+    location = new Point(x, y);
   }
+  wallet = new Wallet();
 
   moveTo = (point) => (this.location = point);
 }
@@ -153,7 +153,10 @@ class Customer extends Person {
    * @param  {number} numberOfIceCreams
    */
   requestIceCream = (vendor, numberOfIceCreams) => {
-    if (this._isInRange(vendor) && this._haveEnoughMoney(vendor, numberOfIceCreams))
+    if (
+      this._isInRange(vendor) &&
+      this._haveEnoughMoney(vendor, numberOfIceCreams)
+    )
       vendor.sellTo(this, numberOfIceCreams);
   };
 }
