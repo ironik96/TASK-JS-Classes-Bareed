@@ -71,7 +71,7 @@ class Person {
   // implement Person!
   constructor(name, x, y) {
     this.name = name;
-    location = new Point(x, y);
+    this.location = new Point(x, y);
   }
   wallet = new Wallet();
 
